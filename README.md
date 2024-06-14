@@ -14,15 +14,15 @@ The theoretical process of solving SQL query validation and correction involves 
 
 - **Chain**: In LangChain, a chain is a sequence of steps or operations that process input data and produce an output. For SQLSleuth, chains can be used to handle the flow of data from the user's input query through validation, error detection, and correction.
 
-<center><img src="images/simple-chain.png" width="350"></center>
+![alt text](images/simple-chain.png)
 
 - **Agent**: An agent in LangChain is a more dynamic entity that can make decisions based on the input data. Agents use the ReAct (Reason and Act) framework to process queries, interact with databases or other external resources.. It can also decide which tools or steps to use at each stage of the query processing.
 
-<center><img src="images/sql-agent.png" width="400"></center>
+![alt text](images/sql-agent.png)
 
 - **ReAct Framework**: ReAct stands for Reason and Act, a framework where agents iteratively reason about the task and act by choosing appropriate steps or tools to use. This approach is useful for complex tasks like SQL query validation, where multiple steps and checks are required.
 
-<center><img src="images/react-chain-of-thought.png" width="400"></center>
+![alt text](images/react-chain-of-thought.png)
 
 ### Process Flow
 
