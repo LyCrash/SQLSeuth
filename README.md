@@ -1,2 +1,2 @@
 # SQLSeuth
-An open-source chatbot for handling SQL query errors
+An OpenAI chatbot for handling SQL queries to a database
