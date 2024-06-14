@@ -44,5 +44,9 @@ To get started with SQLSleuth, follow these steps:
    ```sh
    git clone https://github.com/LyCrash/SQLSleuth.git
    cd SQLSleuth
+2. [OPTIONAL] Run on an isolated python virtual environment
+   ```sh
+   python -m venv venv
+   .\venv\Scripts\Activate
 ## Contributing
 Contributions are welcome! If you have any improvements or new features to suggest, feel free to open a pull request or submit an issue.
