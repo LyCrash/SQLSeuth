@@ -1,12 +1,14 @@
 # SQLSleuth: Query Error-handler Chatbot
 
-SQLSleuth is a project designed to handle SQL queries of different SQL dialects : check their validity in the current DBMS of the provided database, detect any errors, identify their positions, categorize their types, and suggest potential corrections for the queries. This tool aims to assist developers in building their applications with relational databases by providing a robust mechanism for SQL query validation and correction.
+SQLSleuth is a project designed to handle the user's SQL input queries of different SQL dialects : check their validity in the current DBMS of the provided database, detect any errors, identify their positions, categorize their types, and suggest potential corrections for the queries. This tool aims to assist developers in building their applications with relational databases by providing a robust mechanism for SQL query validation and correction.
 
 For Testing Purposes --> we used Chinook Database upon SQLite3. 
 
 ## Overview
 
 The theoretical process of solving SQL query validation and correction involves the use of LangChain and OpenAI's language models. LangChain is a framework for building applications powered by large language models (LLMs). It allows for the creation of chains and agents that interact with databases and natural language inputs.
+
+![alt text](../../../../Users/pc/Downloads/sql-agent-chain.png)
 
 ### Key Concepts
 
