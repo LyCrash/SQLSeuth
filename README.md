@@ -1,8 +1,10 @@
 # SQLSleuth: Query Error-handler Chatbot
 
-SQLSleuth is a project designed to handle the user's SQL input queries of different SQL dialects : check their validity in the current DBMS of the provided database, detect any errors, identify their positions, categorize their types, and suggest potential corrections for the queries. This tool aims to assist developers in building their applications with relational databases by providing a robust mechanism for SQL query validation and correction.
+SQLSleuth is a project designed to handle the user's SQL input queries of different SQL dialects (DBMS) : check their validity in the current DBMS of the provided database, detect any errors, identify their positions, categorize their types, and suggest potential corrections for the queries. 
 
-For Testing Purposes --> we used Chinook Database upon SQLite3. 
+This tool aims to assist developers in building their applications with relational databases by providing a robust mechanism for SQL query validation and correction. It can also be plugged in a certain DBMS by catching the user's query and generated errors.
+
+For Testing Purposes --> we used Chinook Database upon SQLite3 and gpt-3.5-turbo as a baseline pre-trained model, most of the customisation done was about prompting (zero-shot, few-shot...)
 
 ## Overview
 
@@ -30,8 +32,8 @@ The theoretical process of solving SQL query validation and correction involves 
 2. **Chain or Agent**: The input is passed to either a chain or an agent.
    - **Chain**: Sequentially processes the input through predefined steps (e.g., syntax check, semantic analysis, correction suggestion).
    - **Agent**: Dynamically decides the steps to take based on the ReAct framework.
-3. **Validation and Error Detection**: The system checks the query for lexical, syntax, semantic, referential integrity, and logical errors.
-4. **Error Correction**: The system suggests corrections for any detected errors.
+3. **Validation and Error Detection**: The system checks the query for lexical, syntax, semantic, referential integrity, and logical errors. The lexical and syntax analysis is done by the pre-trained model (OpenAI's LLM) as it already knows the grammar of SQL Language and fed with many query examples over the internet, while in the other hand, other types of errors are detected by our customised agent that knows in depth our input database schema and some samples (context).
+4. **Error Correction**: By knowing the right problem or errors, the system can suggest corrections for any detected errors.
 5. **Output**: The corrected query and an error report is returned to the user.
 
 ## Repository Structure
@@ -54,9 +56,14 @@ To get started with SQLSleuth, follow these steps:
    ```sh
    git clone https://github.com/LyCrash/SQLSleuth.git
    cd SQLSleuth
-2. [OPTIONAL] Run on an isolated python virtual environment
+2. Make sure to create a `.env` file and set your api key : 
+   ```sh
+   OPENAI_API_KEY="..."
+3. [OPTIONAL] Run on an isolated python virtual environment
    ```sh
    python -m venv venv
    .\venv\Scripts\Activate
+4. You can know now start testing the notebooks described above
+
 ## Contributing
 Contributions are welcome! If you have any improvements or new features to suggest, feel free to open a pull request or submit an issue.
